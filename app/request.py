@@ -8,16 +8,20 @@ from newsapi import NewsApiClient
 # Getting api key
 api_key = None
 
+newsapi= None
+
+
 #Getting base url
-base_url = None
-sources_url = None
-articles_url = None
+# base_url = None
+# sources_url = None
+# articles_url = None
 
 
 
 def configure_request(app):
-    global api_key, base_url, sources_url, articles_url
+    global api_key, newsapi
     api_key = app.config['NEWS_API_KEY']
+    newsapi = NewsApiClient(api_key = api_key)
     # base_url = app.config["TOP_HEADLINES_API_BASE_URL"]
     # sources_url = app.config["SOURCE_API_BASE_URL"]
     # articles_url = app.config["ARTICLES_API_BASE_URL"]
@@ -69,7 +73,7 @@ def process_results(headlines_list):
     return headlines_results
 
 
-def get_sources():
+def get_sources(category):
     # api_key = os.environ.get('NEWS_API_KEY')
     # get_sources_url = sources_url.format(category, api_key)
 
@@ -77,7 +81,7 @@ def get_sources():
     #     get_sources_data = url.read()
     #     get_sources_response = json.loads(get_sources_data)
     newsapi = NewsApiClient(api_key)
-    get_sources_response = newsapi.get_sources()
+    get_sources_response = newsapi.get_sources(category = category)
     print(get_sources_response)
 
     sources_results = None
