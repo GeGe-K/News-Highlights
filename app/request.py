@@ -86,7 +86,6 @@ def get_sources():
         sources_results = process_sources(sources_results_list)
 
     return sources_results
-    print(sources_results)
 
 
 def process_sources(sources_list):

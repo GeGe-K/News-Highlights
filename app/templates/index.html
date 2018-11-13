@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the News Arena </title>
-        {% endif %}
-    </head>
+{% extends 'base.html' %} 
 
-    <body>
-        <ul>
-            {%for source in sources%}
-            <li>{{source.name}}</li>
-            {%endfor%}
-        </ul>
-    </body>
-
-</html>
+{% block content %}
+<div class="container">
+    <h2>Welcome to the NewsArena</h2>
+    <div class="row">
+        {%for source in sources%}
+        <div class="col-md-4 col-sm-6 d-flex">
+            <div class="card mb-3 flex-fill">
+                <div class="card-body">
+                    <h3 class="card-title">{{source.name}}</h3>
+                    <p class="card-text">{{source.description}}</p>
+                    <a href="articles:/{{source.id}}" class="card-link">View Articles</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}

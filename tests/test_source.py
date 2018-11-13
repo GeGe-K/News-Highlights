@@ -19,7 +19,7 @@ class SourceTest(unittest.TestCase):
 
     def test_init(self):
             '''
-            test_init to ensure objects are instantiated correctly
+            test_init to ensure objects are initialized correctly
             :return:
             '''
             self.assertEqual(self.new_source.id, "al-jazeera-english)
