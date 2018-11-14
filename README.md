@@ -6,7 +6,7 @@
 ## Description 
 News-Highlights is an application that displays the latest news from various sources and categories e.g. Business from Wall Street Journal.
 
-You can view the live link on: 
+You can view the live link on: https://news-arena.herokuapp.com/
 
 ## User Stories
 These are the behaviours that the application implenents for use by a user.
